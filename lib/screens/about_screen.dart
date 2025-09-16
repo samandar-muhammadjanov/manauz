@@ -79,7 +79,7 @@ class AboutScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          'Mana Uz - O\'zbekistonda elektronika mahsulotlarini qulay shartlarda va ishonchli xizmat ko\'rsatish asosida sotuvchi yetakchi kompaniyalardan biri. Bizning maqsadimiz - mijozlarimizga eng yaxshi mahsulotlarni qulay shartlarda taqdim etish.',
+                          'Roza Electronics - O\'zbekistonda elektronika mahsulotlarini qulay shartlarda va ishonchli xizmat ko\'rsatish asosida sotuvchi yetakchi kompaniyalardan biri. Bizning maqsadimiz - mijozlarimizga eng yaxshi mahsulotlarni qulay shartlarda taqdim etish.',
                           style: theme.textTheme.bodyLarge?.copyWith(
                             color: AppColors.textSecondary,
                             height: 1.6,
@@ -252,7 +252,7 @@ class AboutScreen extends StatelessWidget {
             icon: Icons.email_outlined,
             title: 'Elektron pochta',
             value: 'info@manauz.uz',
-            onTap: () => _sendEmail('info@manauz.uz'),
+            onTap: () => _sendEmail('info@rozaelectronics.uz'),
           ),
           const Divider(height: 24),
           _buildContactItem(
@@ -311,129 +311,6 @@ class AboutScreen extends StatelessWidget {
               ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildSocialMedia() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _buildSocialIcon(
-          'assets/icons/telegram.png',
-          () => _launchUrl('https://t.me/manauz'),
-        ),
-        const SizedBox(width: 16),
-        _buildSocialIcon(
-          'assets/icons/instagram.png',
-          () => _launchUrl('https://instagram.com/manauz'),
-        ),
-        const SizedBox(width: 16),
-        _buildSocialIcon(
-          'assets/icons/facebook.png',
-          () => _launchUrl('https://facebook.com/manauz'),
-        ),
-        const SizedBox(width: 16),
-        _buildSocialIcon(
-          'assets/icons/youtube.png',
-          () => _launchUrl('https://youtube.com/manauz'),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildSocialIcon(String asset, VoidCallback onTap) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(50),
-      child: Container(
-        width: 50,
-        height: 50,
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Image.asset(
-          asset,
-          errorBuilder: (context, error, stackTrace) => const Icon(Icons.link),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildLocationCard() {
-    return Card(
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-        side: BorderSide(color: AppColors.border),
-      ),
-      child: Column(
-        children: [
-          // Map Placeholder
-          Container(
-            height: 180,
-            decoration: BoxDecoration(
-              color: AppColors.surface,
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(12),
-              ),
-            ),
-            child: const Center(
-              child: Icon(
-                Icons.location_on_outlined,
-                size: 40,
-                color: AppColors.primary,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Bizning ofisimiz',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                ),
-                const SizedBox(height: 8),
-                const Text(
-                  'Toshkent shahar, Yunusobod tumani, Amir Temur shox ko\'chasi, 108-uy',
-                  style: TextStyle(
-                    color: AppColors.textSecondary,
-                    fontSize: 14,
-                  ),
-                ),
-                const SizedBox(height: 12),
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton.icon(
-                    onPressed: () =>
-                        _openMaps('Toshkent, Yunusobod, Amir Temur 108'),
-                    icon: const Icon(Icons.directions_outlined, size: 18),
-                    label: const Text('Yo\'l yo\'riqnomasi'),
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: AppColors.primary,
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      side: const BorderSide(color: AppColors.primary),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }

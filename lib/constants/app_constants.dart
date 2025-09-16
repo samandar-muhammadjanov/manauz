@@ -1,6 +1,6 @@
 class AppConstants {
   // App info
-  static const String appName = 'Mana Uz';
+  static const String appName = 'Roza Electronics';
   static const String appTagline =
       'Telefon va noutbuklarni qulay to\'lov bilan oling';
 
